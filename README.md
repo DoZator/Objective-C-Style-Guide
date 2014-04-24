@@ -26,34 +26,34 @@ This style guide outlines the coding conventions of the iOS team at Intelex, LLC
 
 **Example**
 
-		```objC
-		// This is an inline comment
+```objC
+// This is an inline comment
 
-		/* This is a block comment 
-		with multiple lines. */
-		```
+/* This is a block comment 
+with multiple lines. */
+```
 
 ##Organization
 
 * Using `#pragma mark` to organize your code.
 
-		```objC
-		#pragma mark - Init
+```objC
+#pragma mark - Init
 
-		- (instancetype)init
-		{
-		}
+- (instancetype)init
+{
+}
 		
-		- (void)viewDidLoad
-		{
-		}
+- (void)viewDidLoad
+{
+}
 
-		#pragma mark - IBActions
+#pragma mark - IBActions
 
-		- (IBAction)useForce:(id)sender
-		{
-		}
-		```
+- (IBAction)useForce:(id)sender
+{
+}
+```
 
 ##Spacing
 
@@ -65,17 +65,17 @@ This style guide outlines the coding conventions of the iOS team at Intelex, LLC
 
 **Example**
 
-		```objC
-		@implementation SomeClassName
-		
-		- (BOOL)checkPresent
-		{
-		     for (Wookiee *wookiee in wookieesList) {
-		         // some code
-		     }
-		}
-		@end
-		```
+```objC
+@implementation SomeClassName
+	
+- (BOOL)checkPresent
+{
+	for (Wookiee *wookiee in wookieesList) {
+		// some code
+	}
+}
+@end
+```
 
 ##Variables
 
@@ -85,16 +85,16 @@ This style guide outlines the coding conventions of the iOS team at Intelex, LLC
 
 **Example**
 
-		```objC
-		// Good
-		NSString *personName = @"Obi-Wan Kenobi";
+```objC
+// Good
+NSString *personName = @"Obi-Wan Kenobi";
+	
+// Bad
+NSString * personName = @"Jabba the Hutt";
 		
-		// Bad
-		NSString * personName = @"Jabba the Hutt";
-		
-		// Bad
-		NSString* personName = @"Darth Vader";
-		```
+// Bad
+NSString* personName = @"Darth Vader";
+```
 
 ##Methods
 
@@ -102,27 +102,27 @@ This style guide outlines the coding conventions of the iOS team at Intelex, LLC
 
 **Example**
 
-		```objC
-		// Good
-		- (void)setName:(NSString *)name forImage:(UIImage *)image;
+```objC
+// Good
+- (void)setName:(NSString *)name forImage:(UIImage *)image;
 		
-		// Bad
-		-(void)set:(NSString *)n i:(UIImage*)img;
-		```
+// Bad
+-(void)set:(NSString *)n i:(UIImage*)img;
+```
 
 ##Properties
 
 * Property attributes should be explicitly listed, and will help new programmers when reading the code. The order of properties should be storage then atomicity, which is consistent with automatically generated code when connecting UI elements from Interface Builder.
 
-		```objC
-		// Good
-		@property (weak, nonatomic) IBOutlet UIView *loadView;
-		@property (strong, nonatomic) NSString *jediName;
+```objC
+// Good
+@property (weak, nonatomic) IBOutlet UIView *loadView;
+@property (strong, nonatomic) NSString *jediName;
 		
-		// Bad
-		@property(nonatomic,weak) IBOutlet UIView *loadView;
-		@property (nonatomic) NSString *title;
-		```
+// Bad
+@property(nonatomic,weak) IBOutlet UIView *loadView;
+@property (nonatomic) NSString *title;
+```
 
 ##Private Properties
 
@@ -130,14 +130,14 @@ This style guide outlines the coding conventions of the iOS team at Intelex, LLC
 
 **Example**
 
-		```objC
-		@interface YASomeViewController ()
+```objC
+@interface YASomeViewController ()
 		
-		@property (strong, nonatomic) UIView *thumbsView;
-		@property (strong, nonatomic) UIWebView *webView;
+@property (strong, nonatomic) UIView *thumbsView;
+@property (strong, nonatomic) UIWebView *webView;
 		
-		@end
-		```
+@end
+```
 
 ##Dot-notation Syntax
 
@@ -145,40 +145,40 @@ This style guide outlines the coding conventions of the iOS team at Intelex, LLC
 
 **Example**
 
-		```objC
-		// Good
-		view.backgroundColor = [UIColor whiteColor];
-		[UIApplication sharedApplication].delegate;
+```objC
+// Good
+view.backgroundColor = [UIColor whiteColor];
+[UIApplication sharedApplication].delegate;
 		
-		// Bad
-		[view setBackgroundColor:[UIColor whiteColor]];
-		UIApplication.sharedApplication.delegate;
-		```
+// Bad
+[view setBackgroundColor:[UIColor whiteColor]];
+UIApplication.sharedApplication.delegate;
+```
 
 ##Literals
 
 * NSString, NSNumber, NSArray, and NSDictionary literals should be used whenever possible.
 
-		```objC
-		NSString *jediName = @"Luke";
-		NSNumber *starshipSpeed = @160;
-		NSArray *deathStars = @[@"Star #1", @"Star #2"];
-		NSDictionary *driver = @{@"name": @"Han Solo", @"force" : @1};
-		```
+```objC
+NSString *jediName = @"Luke";
+NSNumber *starshipSpeed = @160;
+NSArray *deathStars = @[@"Star #1", @"Star #2"];
+NSDictionary *driver = @{@"name": @"Han Solo", @"force" : @1};
+```
 
 ##Constants
 
 * Constants should be declared as static constants and not #defines unless explicitly being used as a macro.
 
-		```objC
-		// Good
-		static NSString * const YATitleName = @"Story Title";
-		static CGFloat const YADefaultHeight = 230.0;
+```objC
+// Good
+static NSString * const YATitleName = @"Story Title";
+static CGFloat const YADefaultHeight = 230.0;
 		
-		// Bad
-		#define TitleName @"Story Title"
-		#define defaultHeight 2.0
-		```
+// Bad
+#define TitleName @"Story Title"
+#define defaultHeight 2.0
+```
 
 ##Enumeration
 
@@ -186,87 +186,87 @@ This style guide outlines the coding conventions of the iOS team at Intelex, LLC
 
 **Example**
 
-		```objC
-		// enum
-		typedef NS_ENUM(NSInteger, XYStarshipType) {
-		    XYStarshipFighter,
-		    XYStarshipCargo,
-		    XYStarshipSpy
-		};
+```objC
+// enum
+typedef NS_ENUM(NSInteger, XYStarshipType) {
+	XYStarshipFighter,
+	XYStarshipCargo,
+	XYStarshipSpy
+};
 		
-		// bitmask
-		typedef NS_OPTIONS(NSInteger, XYCollisionCategory) {
-		    XYCollisionCategoryCar,
-		    XYCollisionCategoryWall,
-		    XYCollisionCategoryBuilding,
-		    XYCollisionCategoryPerson
-		};
+// bitmask
+typedef NS_OPTIONS(NSInteger, XYCollisionCategory) {
+	XYCollisionCategoryCar,
+	XYCollisionCategoryWall,
+	XYCollisionCategoryBuilding,
+	XYCollisionCategoryPerson
+};
 		
-		// Untyped with a name
-		typedef enum {
-		    UIElementStyleDefault,
-		    UIElementStyleOne,
-		    UIElemrntStyleTwo,
-		    UIElemrntStyleThree
-		} UIElementStyle;
-		```
+// Untyped with a name
+typedef enum {
+	UIElementStyleDefault,
+	UIElementStyleOne,
+	UIElemrntStyleTwo,
+	UIElemrntStyleThree
+} UIElementStyle;
+```
 
 ##Booleans
 
 * Objective-C uses YES and NO. Therefore true and false should only be used for CoreFoundation, C or C++ code. Since nil resolves to NO it is unnecessary to compare it in conditions. Never compare something directly to YES, because YES is defined to 1 and a BOOL can be up to 8 bits.
 
-		```objC
-		// Good
-		if (someObject) {
-		}
+```objC
+// Good
+if (someObject) {
+}
 		
-		if (![anotherObject boolValue]) {
-		}
+if (![anotherObject boolValue]) {
+}
 		
-		// Bad
-		if (someObject == nil) {
-		}
+// Bad
+if (someObject == nil) {
+}
 		
-		if ([anotherObject boolValue] == NO) {
-		}
+if ([anotherObject boolValue] == NO) {
+}
 		
-		if (isAwesome == YES) {
-		}
+if (isAwesome == YES) {
+}
 		
-		if (isAwesome == true) {
-		}
-		```
+if (isAwesome == true) {
+}
+```
 
 ##Init
 
 * Init methods should follow the convention provided by Apple's generated code template. A return type of 'instancetype' should also be used instead of 'id'.
 
-		```objC
-		- (instancetype)init 
-		{
-		  self = [super init];
+```objC
+- (instancetype)init 
+{
+	self = [super init];
 		  
-		  if (self) {
-		    // ...
-		  }
-		  return self;
-		}
-		```
+	if (self) {
+		// ...
+	}
+	return self;
+}
+```
 
 ##Singletons
 
 * Singleton objects should use a thread-safe pattern for creating their shared instance.
 
-		```objC
-		+ (instancetype)sharedInstance 
-		{
-			static dispatch_once_t onceToken = 0;
-		  	static id sharedInstance = nil;
+```objC
++ (instancetype)sharedInstance 
+{
+	static dispatch_once_t onceToken = 0;
+	static id sharedInstance = nil;
 		
-		  	dispatch_once(&onceToken, ^{
-		    	sharedInstance = [[self alloc] init];
-		  	});
+	dispatch_once(&onceToken, ^{
+		sharedInstance = [[self alloc] init];
+	});
 		
-		  	return sharedInstance;
-		}
-		```
+	return sharedInstance;
+}
+```
